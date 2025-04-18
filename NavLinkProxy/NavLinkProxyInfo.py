@@ -1,4 +1,4 @@
-1. Network Address Translation (NAT) Nedir?
+"""1. Network Address Translation (NAT) Nedir?
 Network Address Translation (NAT), bir ağda özel IP adreslerini genel bir IP adresine dönüştüren bir tekniktir.
 Genellikle, birden fazla cihazın internet bağlantısının ortak bir genel IP adresi üzerinden sağlanması amacıyla kullanılır.
 NAT, internet servis sağlayıcıları (ISP) ve kurum ağları arasında çok sayıda özel IP adresinin yönlendirilmesini sağlayarak,
@@ -119,3 +119,112 @@ NAT Proxy, ağ güvenliği, gizlilik, IP adresi tasarrufu ve ağ yönetimini kol
 Bu tür proxy’ler, büyük ağlarda internet erişimini yönetmek için vazgeçilmez araçlar haline gelmiştir.
 Hem küçük ölçekli hem de büyük ölçekli ağlarda kullanılabilir ve farklı ağ yapılarıyla uyumlu çalışabilirler.
 Ancak, NAT Proxy kullanımı, ağ performansını, gecikmeyi ve yük yönetimini etkileyebilir, bu yüzden doğru yapılandırma önemlidir.
+
+
+NavLink Proxy: Genellikle MAVLink (Micro Air Vehicle Link) protokolüyle çalışan drone sistemlerinde,
+komut, veri ve telemetri akışını yönlendirmek/aktarmak için kullanılan bir aracı sunucu (proxy) sistemidir.
+
+DRONE SİSTEMİ İÇİN NAVLINK PROXY NEDİR?
+NavLink Proxy, birden fazla yer kontrol istasyonu (Ground Control Station -
+GCS) ile bir veya birden çok drone arasında veri paylaşımını kolaylaştırmak ve yönetmek için kullanılan bir yazılım veya ağ aracısıdır.
+
+✅ Temel Görevleri:
+Drone ile GCS arasında bağlantı kurmak
+
+Telemetri verisini çoğaltmak ve yönlendirmek
+
+Çoklu kullanıcıya (multi-GCS) erişim sağlamak
+
+UDP/TCP protokolleri üzerinden yönlendirme
+
+Bağlantı sorunlarına karşı tamponlama, yeniden deneme
+
+2. MAVLink Protokolü ile İlişkisi
+NavLink Proxy, MAVLink protokolünü kullanarak uçuş kontrolcüsü ile iletişim kurar.
+
+MAVLink Nedir?
+Micro Air Vehicle Link: Drone’lar ile GCS arasında mesaj alışverişi için kullanılan bir açık kaynak veri protokolüdür.
+
+MAVLink mesajları çok hafif, hızlı ve kararlı olacak şekilde tasarlanmıştır.
+
+Kullanıldığı yazılımlar: ArduPilot, PX4, QGroundControl, Mission Planner, MAVProxy vb.
+
+3. NAVLINK PROXY NASIL ÇALIŞIR?
+Bir proxy yazılımı olarak, aşağıdaki temel adımlarla çalışır:
+
+🔄 İş Akışı:
+Drone uçuş kontrolcüsü (Pixhawk, Cube Orange vs.) MAVLink protokolü ile veri gönderir.
+
+NavLink Proxy, bu verileri alır ve:
+
+Birden çok GCS’ye yönlendirir.
+
+Kayıt/log işlemi yapar.
+
+Uçuş sırasında bağlantı sürekliliğini garanti eder.
+
+Aynı zamanda GCS'den gelen kontrol komutlarını da drone'a iletir.
+
+🧰 4. TEKNİK YAPI & UYGULAMA
+🌐 Bağlantı Türleri:
+UDP / TCP üzerinden bağlantı (örn. tcp:127.0.0.1:5760)
+
+Seri Port (COM/ttyUSB0) üzerinden doğrudan bağlantı
+
+Network üzerinden port forwarding
+
+🛠 Kullanılan Yazılımlar:
+
+Yazılım	Açıklama
+MAVProxy	CLI tabanlı MAVLink GCS ve proxy aracı
+NavProxy	Bazı özel platformlar tarafından geliştirilen GCS-proxy katmanı
+MAVRouter	MAVLink veri yönlendirme aracı (çoklu port)
+DroneKit / MAVSDK	Yazılımla GCS oluşturma ve proxy benzeri işlevler sağlama
+QGroundControl	GUI tabanlı GCS – proxy bağlantıları kurabilir
+🔐 5. GÜVENLİK & PERFORMANS
+NavLink Proxy sistemleri yüksek hızda veri aktarımı yaptığı için bazı önlemler alınmalıdır:
+
+⚠️ Dikkat Edilmesi Gerekenler:
+Güvenli bağlantı (şifreli kanal: VPN, SSL tüneli vb.)
+
+Zaman senkronizasyonu (GPS veya NTP ile)
+
+Bağlantı kontrolü ve loglama (bağlantı koptuğunda otomatik tekrar deneme)
+
+QoS (Quality of Service) optimizasyonu
+
+🧪 6. DRONE + NAVLINK PROXY PROJESİNE ÖRNEK
+Diyelim ki bir sistem kuruyorsun:
+
+Bir adet drone (PX4 kontrollü)
+
+Bir yer istasyonu (QGroundControl)
+
+İki izleyici (telemetri verisini görmek isteyen gözlemciler)
+
+NavLink Proxy ile:
+
+Ana drone verisi alınıp, 3 ayrı cihaza aynı anda dağıtılabilir.
+
+Her cihaz farklı portlardan bağlanabilir (udp:14550, tcp:5762 gibi).
+
+Gözlemciler yalnızca veri alır, ana GCS kontrolü elinde tutar.
+
+🔧 7. NAVLINK PROXY KURULUM (Örnek: MAVProxy)
+bash
+Kopyala
+Düzenle
+# MAVProxy kurulumu
+pip install MAVProxy
+
+# Başlatma
+mavproxy.py --master=/dev/ttyUSB0 --out=udp:127.0.0.1:14550 --out=udp:127.0.0.1:14551
+Yukarıdaki komut, seri porttan gelen veriyi alır ve 2 farklı GCS’ye yönlendirir.
+
+📌 SONUÇ
+
+Konu	Özet
+Drone	Fiziksel cihaz, uçuş için sensörler, motorlar, kontrolcüler içerir.
+MAVLink	Drone ile GCS arasında veri protokolü
+NavLink Proxy	Bu veriyi yönlendiren aracı sistem
+Kullanım	Çoklu kontrol, veri izleme, telemetri paylaşımı, güvenli bağlantı"""
