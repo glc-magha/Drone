@@ -39,7 +39,8 @@ Hibrid dronelar, hem pervaneler hem de kanatlar kullanarak uçabilen araçlardı
 Bu dronelar, hem dikey olarak kalkış ve iniş yapabilme yeteneğine hem de uçak gibi uzun mesafe uçma kapasitesine sahiptir.
 
 3. Drone Bileşenleri
-Bir drone, birçok farklı bileşenden oluşur. Bu bileşenler, drone'un uçuş performansını ve işlevselliğini belirler. Temel bileşenler şunlardır:
+Bir drone, birçok farklı bileşenden oluşur. Bu bileşenler, drone'un uçuş performansını ve işlevselliğini belirler.
+Temel bileşenler şunlardır:
 
 3.1. Pervaneler ve Motorlar
 Drone('ların uçuşu, pervaneler ve motorlarla sağlanır.'
@@ -94,7 +95,8 @@ Tarımda, dronelar ekin sağlığını izlemek, gübreleme yapmak ve mahsul hasa
 
 4.3. Hava Fotoğrafçılığı ve Sinema
 Dronelar, hava fotoğrafçılığı ve sinema endüstrisinde popüler bir araçtır.
-Dronelar, geleneksel helikopterler ve uçaklardan daha ucuz ve erişilebilir olduğu için film çekimlerinde ve fotoğrafçılıkta sıklıkla kullanılmaktadır.
+Dronelar, geleneksel helikopterler ve uçaklardan daha ucuz ve erişilebilir olduğu için
+film çekimlerinde ve fotoğrafçılıkta sıklıkla kullanılmaktadır.
 
 4.4. Acil Durum ve Arama-Kurtarma
 Dronelar, afet bölgelerinde arama-kurtarma faaliyetlerine yardımcı olmak için kullanılır.
@@ -128,7 +130,8 @@ Barometre, özellikle otonom uçuşlarda yüksekliği sabit tutmaya yardımcı o
 
 6. GPS (Global Positioning System)
 Açıklama: Drone('un konumunu belirlemek için kullanılan bir küresel konumlama sistemidir.'
-                ' GPS, drone’a uçuş rotası ve yönü konusunda rehberlik eder. GPS sayesinde drone, otonom uçuş yapabilir ve belirli bir hedefe doğru hareket edebilir.)
+                ' GPS, drone’a uçuş rotası ve yönü konusunda rehberlik eder. GPS sayesinde drone,
+    otonom uçuş yapabilir ve belirli bir hedefe doğru hareket edebilir.)
 
 7. Uçuş Kontrol Sistemi (Flight Controller)
 Açıklama: Drone'un uçuşunu yöneten ana donanım bileşenidir. Uçuş kontrolörü, sensörlerden gelen verileri analiz eder ve pervanelerin hızını ayarlayarak stabil uçuş sağlar. Uçuş kontrol sistemi, ayrıca GPS verileri ile yönlendirme yapar ve drone'un dengeyi korumasını sağlar.
@@ -170,7 +173,8 @@ Geofence, genellikle güvenlik amacıyla, drone’ların yasaklı alanlara girme
 
 15. VLOS (Visual Line of Sight)
 Açıklama: Drone('un operatörü tarafından sürekli olarak görsel olarak izlenmesini gerektiren bir uçuş kuralıdır. '
-                'VLOS, genellikle yasal düzenlemelerle ilişkilidir ve drone pilotunun dronenin uçuşu üzerinde kontrol sahibi olabilmesini sağlar.)
+                'VLOS, genellikle yasal düzenlemelerle ilişkilidir ve
+            drone pilotunun dronenin uçuşu üzerinde kontrol sahibi olabilmesini sağlar.)
 
 16. Yük Taşıma Kapasitesi
 Açıklama: Drone('un taşıyabileceği maksimum ağırlıktır.'
@@ -200,5 +204,124 @@ Açıklama: Drone('un taşıyabileceği ek yükü ifade eder. Bu, genellikle sen
                 ' kameralar, araştırma ekipmanları veya kargo gibi öğeleri içerir.)
 
 21. Gövde Tipi (Frame Type)
-Açıklama: Dronenin ana yapısının türüdür. Dronelar genellikle plastik, karbon fiber veya alüminyum gibi hafif, dayanıklı malzemelerden yapılır. Gövde tipi, drone’un dayanıklılığını ve uçuş verimliliğini etkiler.
+Açıklama: Dronenin ana yapısının türüdür. Dronelar genellikle plastik, karbon fiber veya alüminyum gibi hafif,
+dayanıklı malzemelerden yapılır. Gövde tipi, drone’un dayanıklılığını ve uçuş verimliliğini etkiler.
+1. DRONE'UN TARİHÇESİ (KISA)
+İlk İHA çalışmaları askerî amaçlarla 1900'lerin başında başlamıştır.
+
+2000’li yıllarda sivil alana geçiş yaparak fotoğrafçılık, haritalama, lojistik gibi sektörlere yayılmıştır.
+
+2010 sonrası ise ticari drone’lar yaygınlaşarak bireysel kullanıma açılmıştır.
+
+🔧 2. DRONE'UN ANA BİLEŞENLERİ
+Drone'lar birçok parçadan oluşur. İşte temel donanımlar:
+
+
+Bileşen	Görevi
+Pervaneler (Propeller)	İtiş gücü sağlar. Genellikle 4 (quad), 6 (hexa) veya 8 (octa) tanedir.
+ESC (Electronic Speed Controller)	Motor hızını elektronik olarak kontrol eder.
+Fırçasız Motorlar (Brushless Motors)	Pervaneleri döndürür. Sessiz ve verimlidir.
+Uçuş Kontrolcü (Flight Controller - FC)	Drone’un “beyni”dir. Sensör verilerini işleyerek stabil uçuş sağlar.
+IMU (Inertial Measurement Unit)	Jiroskop ve ivmeölçer ile denge hesaplaması yapar.
+GPS Modülü	Konum, yön ve rota takibi için kullanılır.
+Batarya (Li-Po genellikle)	Drone’un enerji kaynağıdır. Uçuş süresini belirler.
+Kamera / Gimbal	Görüntü alma işlevi. Gimbal titreşimi önleyerek sabit görüntü sağlar.
+Radyo Alıcı & Verici (RC Receiver & Transmitter)	Uzaktan kumanda ile drone arasında iletişimi sağlar.
+Telemetri Modülü	Uçuş bilgilerini yere iletir. (hız, yükseklik, voltaj vs.)
+Frame (Gövde)	Drone’un fiziksel iskeleti. Genellikle karbon fiber ya da plastik.
+📡 3. DRONE ÇALIŞMA PRENSİBİ
+Drone'lar, pervanelerin dönmesiyle kaldırma kuvveti (lift) oluşturarak havalanır.
+ Pervanelerin farklı hızlarda dönmesiyle yön değiştirir, ileri-geri gider, sağa-sola döner (yaw, pitch, roll).
+
+Yukarı/İniş (Throttle): Tüm pervaneler aynı hızda döner.
+
+İleri/Geri (Pitch): Ön veya arka pervaneler daha hızlı döner.
+
+Sağa/Sola Yatış (Roll): Sağ veya sol pervaneler daha hızlı döner.
+
+Dönme (Yaw): Ters yönde dönen pervaneler hız farkı ile döndürür.
+
+📐 4. TEKNİK TERİMLER
+
+Terim	Açıklama
+Yaw	Dronun kendi ekseni etrafında dönmesi (sağa-sola dönme)
+Pitch	Öne veya arkaya eğilme
+Roll	Sola veya sağa yatma
+Altitude Hold	Sabit yükseklikte uçma yeteneği
+GPS Hold	GPS ile belirli konumu koruma
+Return to Home (RTH)	Drone’un kalkış noktasına otomatik geri dönmesi
+Failsafe	Sinyal kesilirse önceden belirlenmiş tepki (örneğin iniş)
+Loiter Mode	Belirli noktada sabit kalma (genellikle GPS ile)
+Waypoint	Önceden belirlenmiş noktalara otonom uçuş
+FPV (First Person View)	Kameradan canlı görüntü ile uçuş
+Telemetry	Uçuş verilerinin gerçek zamanlı iletilmesi (hız, batarya, irtifa vb.)
+🧠 5. DRONE KONTROL YÖNTEMLERİ
+Manuel Kontrol: Kullanıcı her hareketi kendisi yönetir.
+
+Yarı-Otonom (Assisted): Yükseklik koruma, yön sabitleme gibi yardımlar sağlar.
+
+Tam Otonom: GPS + yazılım ile harita üstünde otomatik rota izler.
+
+📷 6. DRONE TÜRÜNE GÖRE KULLANIM ALANLARI
+
+Tür / Sınıf	Kullanım Alanı
+Hobi (RC Drone)	Eğlence, FPV yarışları
+Kamera Dronları	Fotoğrafçılık, sinema çekimi
+Endüstriyel Drone	Tarım (ilaçlama, haritalama), enerji (hat denetimi)
+Lojistik Drone	Kargo, teslimat hizmetleri
+Askerî İHA’lar	Keşif, gözetleme, saldırı amaçlı
+Yarış Dronları	FPV yarışları, hız ve çeviklik üzerine tasarlanır.
+Multi-Rotor	Yaygın olan tip (Quadcopter, Hexacopter)
+Fixed-Wing	Sabit kanatlı, uzun menzilli uçuşlar için
+VTOL (Vertical Takeoff and Landing)	Helikopter gibi dikey kalkar, uçak gibi uçar.
+⚙️ 7. YAZILIM & UÇUŞ KONTROL SİSTEMLERİ
+Drone’lar genellikle açık kaynaklı veya özel yazılımlar kullanır:
+
+Ardupilot – Gelişmiş otomatik uçuş özellikleri sağlar.
+
+PX4 – Drone yazılım mimarisi (Linux tabanlı).
+
+Betaflight / Cleanflight – FPV yarış dronları için optimize.
+
+DJI Flight Software – DJI marka cihazlar için özel kontrol yazılımı.
+
+Mission Planner / QGroundControl – Harita üzerinden rota planlama.
+
+🔋 8. BATARYA ve GÜÇ YÖNETİMİ
+En yaygın batarya tipi: Li-Po (Lityum Polimer).
+
+mAh (miliamper-saat): Kapasiteyi gösterir.
+
+C-Rate: Boşaltma oranı (yüksek C → hızlı boşalır).
+
+Uçuş süresi: Genelde 15–30 dakika arasıdır.
+
+Aşırı şarj veya tam boşaltma bataryaya zarar verir!
+
+🛠️ 9. DRONE MONTAJ VE KALİBRASYON SÜRECİ
+Frame montajı
+
+Motor ve ESC bağlantısı
+
+Flight Controller yerleştirme
+
+GPS ve sensörlerin takılması
+
+RC sistem bağlantısı
+
+Kalibrasyon (IMU, compass, ESC)
+
+Test uçuşu ve PID ayarları
+
+⚖️ 10. DRONE UÇUŞ KURALLARI (Türkiye İçin)
+Sivil Havacılık Genel Müdürlüğü (SHGM) kayıt zorunluluğu vardır (500g üstü).
+
+Şehir içinde, kalabalık alanlarda uçmak yasaktır.
+
+120 metre üzeri irtifalar izne tabidir.
+
+Askerî tesis, havaalanı yakınlarında uçmak yasaktır.
+
+Uçuş öncesi İHA Kayıt Sistemi’ne (iharegister.shgm.gov.tr) kayıt gereklidir.
+
 """
