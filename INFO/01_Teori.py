@@ -1,4 +1,4 @@
-Drone, genellikle İnsansız Hava Aracı (İHA) olarak bilinir ve hava yoluyla taşıma yapabilen,
+"""Drone, genellikle İnsansız Hava Aracı (İHA) olarak bilinir ve hava yoluyla taşıma yapabilen,
 yer kontrol istasyonları veya otonom sistemler aracılığıyla yönlendirilen bir araçtır. Droneların temel özellikleri şunlardır:
 
 Otonom uçuş yapabilme: Gelişmiş dronelar, GPS ve sensörler yardımıyla belirli rotalar üzerinde otonom olarak uçabilirler.
@@ -201,3 +201,4 @@ Açıklama: Drone('un taşıyabileceği ek yükü ifade eder. Bu, genellikle sen
 
 21. Gövde Tipi (Frame Type)
 Açıklama: Dronenin ana yapısının türüdür. Dronelar genellikle plastik, karbon fiber veya alüminyum gibi hafif, dayanıklı malzemelerden yapılır. Gövde tipi, drone’un dayanıklılığını ve uçuş verimliliğini etkiler.
+"""
